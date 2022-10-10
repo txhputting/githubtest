@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+
+project.ext.set("cvteBuildDate", new Date());
+
+def genVersionName() {
+    def verName = System.getenv('SERVER_PACKAGE_VERSION_NAME')
+    if (verName) {
+        return verName
+    } else {
+        def formattedDate = (project.ext.cvteBuildDate).format('yyyyMMdd')
+        return formattedDate
+    }
+}
+
+def genVersionCode() {
+    def verCode = System.getenv('SERVER_PACKAGE_VERSION_CODE')
+    if (verCode) {
+        return verCode.toInteger()
+    } else {
+        return ((project.ext.cvteBuildDate).getTime() / 1000).toInteger()
+    }
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion '29.0.3'
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+    defaultConfig {
+        applicationId "yaoshun.com.AndroidTest"
+        minSdkVersion 30
+        targetSdkVersion 30
+        versionCode genVersionCode()
+        versionName genVersionName()
+//        ndk{
+//            moduleName "jnidemo3"
+//            abiFilters 'x86','armeabi-v7a','arm64-v8a'
+//            ldLibs "log"
+//        }
+    }
+    signingConfigs {
+        m9216{
+            keyAlias 'm9216key'
+            keyPassword 'android'
+            storeFile file("m9216.keystore")
+            storePassword 'android'
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.m9216
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+//        externalNativeBuild {
+//            ndkBuild {
+//                path 'src/main/jni/Android.mk'
+//            }
+//        }
+        debug{
+            signingConfig signingConfigs.m9216
+        }
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "AndroidTV-Help.apk"
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.leanback:leanback:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation files('libs\\tvapi.jar')
+//    provided files('libs\\tvapi.jar')
+    implementation files('libs\\com.mstar.android.jar')
+}

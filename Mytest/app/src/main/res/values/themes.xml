@@ -1,0 +1,13 @@
+<resources>
+
+    <style name="Theme.AndroidTest" parent="@style/Theme.Leanback" />
+
+    <style name="Theme.AndroidTest.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AndroidTest.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AndroidTest.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

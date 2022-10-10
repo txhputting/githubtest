@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="112dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:text="@string/my_android_test"
+        android:textSize="80sp" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:gravity="center_horizontal"
+        android:text="@string/my_android_result"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="350dp"
+        android:text="@string/tips_activity"
+        android:clickable = "true"
+        android:textAllCaps="false"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="350dp"
+        android:text="@string/start_intentservice"
+        android:clickable = "true"
+        android:textAllCaps="false"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginRight="100dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/welcome_activity"
+        android:clickable = "true"
+        android:textAllCaps="false"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginRight="100dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/unbind_service"
+        android:clickable = "true"
+        android:textAllCaps="false"
+        android:textSize="25sp" />
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginRight="300dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/bind_service"
+        android:clickable = "true"
+        android:textAllCaps="false"
+        android:textSize="25sp" />
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginRight="500dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/stop_service"
+        android:clickable = "true"
+        android:textAllCaps="false"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginRight="700dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/start_service"
+        android:clickable = "true"
+        android:textAllCaps="false"
+        android:textSize="25sp" />
+
+</RelativeLayout>
